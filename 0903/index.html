@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전종민의 이력서</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>전종민의 이력서</h1> 
+    
+        <section id="my_info">
+            <h2>My info</h2> 
+            <img src="images/profile.jpg" alt="전종민의 얼굴 사진" />
+            <table>
+                <tbody>
+                    <tr id="myname">
+                        <th>이름</th>
+                        <td>전종민</td>
+                    </tr>
+                    <tr>
+                        <th>직업</th>
+                        <td>개발자</td>
+                    </tr>
+                    <tr>
+                        <th>나이</th>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <th>거주지</th>
+                        <td>부산</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+            
+        <section id=""about>
+            <h2>About</h2>
+            <p>개발자가 되어서 다 패버릴거야. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat placerat tellus ut euismod. Integer dignissim molestie sem ut congue. Vestibulum aliquet nibh eget augue dapibus, molestie commodo eros sagittis. Donec interdum pretium rhoncus. Aenean lobortis erat ante, quis imperdiet sapien cursus ut. Sed pretium porttitor odio id tristique. Donec accumsan magna tellus, eget elementum felis eleifend a. Vivamus tempus leo sed turpis malesuada, et sodales justo sagittis. Cras pharetra nisl eros, in aliquet quam congue vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque pharetra mi ac tortor commodo, quis aliquet dui porta. Integer imperdiet accumsan dui eget imperdiet. Nulla cursus sed metus posuere fringilla. Sed et ante lectus.</p>   
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li>
+                    <a href="tel:0100000000">010-000-0000</a>
+                </li>
+                <li>
+                    <a href="mailto:jnjjb05@mail.com" target="_blank">jnjjb05@naver.com</a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/myfacebook" target="_blank">@myfacebook</a>
+                </li>
+                <li>
+                    <a href="https://blog.naver.com/jnjjb05" target="_blank">@myblog</a>
+                    </li>
+            </ul>  
+        </section>
+        
+        <section id="skill">
+            <h2>Skills</h2>
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ol>
+        </section>
+        
+        <section id="project">
+            <h2>Projects</h2>
+            <ol>
+                <li>
+                    <h3>재밌는 영상</h3>
+                    <video src="movie.mp4" controls></video>
+                    <p>Integer imperdiet accumsan dui eget imperdiet. Nulla cursus sed metus posuere fringilla.</p>
+                    <a href="https://blog.naver.com/jnjjb05" target="_blank">MyBlog</a>
+                </li>
+                <li>
+                    <h3>재밌는 앱</h3>
+                    <main>
+        <!-- 카테고리 선택 -->
+        <div class="category-container">
+            <div class="category-section">
+                <h3>나라별</h3>
+                <button class="category-button all-button-nation" data-category="전체_나라">전체</button>
+                <button class="category-button nation-button" data-category="한식">한식</button>
+                <button class="category-button nation-button" data-category="일식">일식</button>
+                <button class="category-button nation-button" data-category="중식">중식</button>
+                <button class="category-button nation-button" data-category="양식">양식</button>
+            </div>
+            <div class="category-section">
+                <h3>시간별</h3>
+                <button class="category-button all-button-time" data-category="전체_시간">전체</button>
+                <button class="category-button time-button" data-category="아침">아침</button>
+                <button class="category-button time-button" data-category="점심">점심</button>
+                <button class="category-button time-button" data-category="저녁">저녁</button>
+            </div>
+        </div>
+
+        <!-- 메뉴 추천 버튼 -->
+        <button id="recommendButton">메뉴추천!</button>
+
+        <!-- 추천된 메뉴와 동영상 -->
+        <div id="menuContainer" style="display: none;">
+            <h2>추천된 메뉴:</h2>
+            <p id="recommendedMenu"></p>
+        </div>
+        
+        <div id="videoContainer" style="display: none;">
+            <h2>추천 메뉴 동영상:</h2>
+            <div id="videoContent"></div>
+        </div>
+    </main>
+
+    <script>
+        const menuData = [
+        { name: '짜장면', categories: ['중식', '점심', '저녁','야식'], video: 'https://www.youtube.com/embed/v8Y_oHBFotE?si=JT7VEX_xBL2rOrkF&amp;start=179' },
+            { name: '탕수육', categories: ['중식', '점심', '저녁','야식'], video: 'https://www.youtube.com/embed/xx6HdrulgPM?si=6qom9iCFl-e2XzNP&amp;start=44' },
+            { name: '김치찌개', categories: ['한식', '점심', '저녁'], video: 'https://www.youtube.com/embed/fOuPsNp94hA?si=YXqgIjuaMPw-OyQ3&amp;start=93' },
+            { name: '비빔밥', categories: ['한식', '점심', '저녁'], video: 'https://www.youtube.com/embed/Nx5vi905knk?si=J4H7bRJL8QB3IHDC&amp;start=123' },
+            { name: '라면', categories: ['한식', '점심', '저녁','야식'], video: 'https://www.youtube.com/embed/x94_2x_-p0Q?si=934pY4affgQWJV2d&amp;start=45' },
+            { name: '라멘', categories: ['일식', '점심', '저녁'], video: 'https://www.youtube.com/embed/DbkXaZTQK_k?si=ZKMW23S-Nm_yzseZ&amp;start=168' },
+            { name: '토스트', categories: ['양식', '아침'], video: 'https://www.youtube.com/embed/TCDPXisHsfA?si=47yZZX7wvjmFYLb1&amp;start=204' },
+            { name: '팬케이크', categories: ['양식', '아침'], video: 'https://www.youtube.com/embed/hNfcXgYNS84?si=7WIp9p9wto_KkdSs&amp;start=182' },
+            { name: '스테이크', categories: ['양식', '점심','저녁'], video: 'https://www.youtube.com/embed/XX7h3z0me1s?si=Se8z3kKqgveplHRb&amp;start=265' },
+        ];
+
+        let selectedCategories = [];
+        let selectedTimeCategory = null;
+
+        // 나라별 카테고리 버튼 클릭 시 선택된 카테고리 업데이트
+        document.querySelectorAll('.nation-button, .all-button-nation').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+
+                if (category === "전체_나라") {
+                    selectedCategories = [];
+                    document.querySelectorAll('.nation-button').forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                } else {
+                    document.querySelector('.all-button-nation').classList.remove('selected');
+
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        selectedCategories = selectedCategories.filter(cat => cat !== category);
+                    } else {
+                        this.classList.add('selected');
+                        selectedCategories.push(category);
+                    }
+                }
+            });
+        });
+
+        // 시간별 카테고리 버튼 클릭 시 하나만 선택되도록 처리
+        document.querySelectorAll('.time-button, .all-button-time').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+
+                if (category === "전체_시간") {
+                    selectedTimeCategory = null;
+                    document.querySelectorAll('.time-button').forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                } else {
+                    document.querySelector('.all-button-time').classList.remove('selected');
+
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        selectedTimeCategory = null;
+                    } else {
+                        document.querySelectorAll('.time-button').forEach(btn => btn.classList.remove('selected'));
+                        this.classList.add('selected');
+                        selectedTimeCategory = category;
+                    }
+                }
+            });
+        });
+
+        // 메뉴 추천 버튼 클릭 시 조건에 맞는 메뉴 선택 및 동영상 표시
+        document.getElementById('recommendButton').addEventListener('click', function() {
+            let filteredMenus;
+
+            // 나라별 전체 버튼이 선택되었을 때는 전체에서 랜덤
+            if (document.querySelector('.all-button-nation').classList.contains('selected')) {
+                filteredMenus = menuData;
+            } else if (selectedCategories.length > 0) {
+                filteredMenus = menuData.filter(menu => 
+                    selectedCategories.some(cat => menu.categories.includes(cat))
+                );
+            } else {
+                filteredMenus = menuData;
+            }
+
+            // 시간별 카테고리 조건 추가
+            if (!document.querySelector('.all-button-time').classList.contains('selected') && selectedTimeCategory) {
+                filteredMenus = filteredMenus.filter(menu => menu.categories.includes(selectedTimeCategory));
+            }
+
+            if (filteredMenus.length > 0) {
+                const randomMenu = filteredMenus[Math.floor(Math.random() * filteredMenus.length)];
+                
+                document.getElementById('recommendedMenu').innerText = randomMenu.name;
+                document.getElementById('menuContainer').style.display = 'block';
+
+                document.getElementById('videoContent').innerHTML = `
+                    <h3>${randomMenu.name}</h3>
+                    <iframe width="560" height="315" src="${randomMenu.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                `;
+                document.getElementById('videoContainer').style.display = 'block';
+            } else {
+                alert('선택한 카테고리에 맞는 메뉴가 없습니다.');
+            }
+        });
+    </script>
+            </ol>    
+        </section>
+    </div>
+    
+
+</body>
+</html>
