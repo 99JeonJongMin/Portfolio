@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 
 <!-- 
@@ -111,6 +111,7 @@ aside {
 #wrapBox {
 	position: relative;
 	width: 800px;
+	height: auto;
 	margin: auto;
 	text-align: left;
 }
@@ -168,6 +169,23 @@ aside {
 	padding: 10px;
 	text-align: center;
 	color: #999;
+}
+
+#skill ol {
+    list-style: none;
+    padding: 0;
+}
+
+#skill li {
+    display: inline-block;
+    background-color: gold;
+    padding: 4px 10px;
+    border-radius: 32px;
+    margin: 0 8px 8px 0;
+}
+
+#skill li::before {
+    content: "#";
 }
 
 
@@ -315,7 +333,16 @@ window.onload = function() {
 			<h1>전종민 소개 페이지</h1>
 			<h2>만나서 반갑습니다! 이 페이지는 저를 소개하는 페이지입니다! 
 			이 페이지는 HTML5 기반으로 제작되었으며, 예제용 페이지를 수정하여 사용중입니다.
-			아직까지 계속 작업중입니다. 현재 진행상태는 <progress id="nowStep" value="20" max="100">35%</progress> 입니다. 감사합니다!</h2>
+			<hr>
+			<section id="skill">
+				<h2>Skills</h2>
+				<ol>
+					<li>HTML <progress id="nowStep" value="60" max="100"></progress></li>
+					<li>CSS <progress id="nowStep" value="40" max="100"></progress></li>
+					<li>Javascript <progress id="nowStep" value="70" max="100"></progress></li>
+				</ol>
+			</section>
+			
 		</hgroup>
 	</header>
 	
@@ -328,11 +355,12 @@ window.onload = function() {
 				
 				<ul>
 					<li>부산공업고등학교 졸업</li>
-					<li>동의과학대학교 컴퓨터소프트웨어과 22학번</li>
+					<li>동의과학대학교 컴퓨터소프트웨어과 2022.03~</li>
 					<li>WEB을 조금씩 공부 하는 중</li>
 				</ul>
 			</section>
 		</div>
+		
 		
 		<div id="techLog" class="shadowBox fixWidth">
 			<section>
@@ -342,10 +370,26 @@ window.onload = function() {
 				
 				<ul>
 					<li>조별 프로젝트 부품판매 쇼핑몰 PartsSale 백엔드 담당</li>
+					<li>2024.01 (주)노스윅 설비 아두이노개발</li>
 					
 				</ul>
 			</section>
+
+			<section>
+				<hgroup>
+					<h1>그 외 이력</h1>
+				</hgroup>
+				
+				<ul>
+					<li>2018.06 ~ 2019.04 (주)그린솔</li>
+				</ul>
+			</section>
+
+			
 		</div>
+
+		
+		
 		
 		<div id="say" class="fixWidth">
 			<section>
@@ -359,7 +403,7 @@ window.onload = function() {
 		-->
 		<aside>
 			<figure id="myPhoto">
-				<img src="images/profile.jpg" width="200px" alt="전종민 사진" />
+				<img src="images/profile.jpg" width="150px" alt="전종민 사진" />
 				<figcaption>전종민 사진</figcaption>
 			</figure>
 		</aside>
