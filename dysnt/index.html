@@ -8,6 +8,19 @@
 	<script src="js/java.js"></script>
 	<script src="js/script.js"></script>
 <style>
+	 img {
+            max-width: 100%;
+            height: auto;
+        }
+	.picture li {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .picture li img {
+            width: 100%;
+            height: auto;
+        }
    li { list-style:none; }
   .picture { list-style:none; padding:0; margin:0; }
   .picture li { float:left; width:50%; }
@@ -116,7 +129,7 @@
 			<h1>찾아오시는길</h1>
 		</div>
 		
-		<div id="map" style="width:1000px;height:800px; display: flex; justify-content: center; align-items: center; margin: 0 auto;"></div>
+		<div id="map" style="width:100%;height:800px; display: flex; justify-content: center; align-items: center; margin: 0 auto;"></div>
 	
 		<script>
 			$(document).on('pageshow', '#road', function() {
