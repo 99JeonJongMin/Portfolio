@@ -1,0 +1,153 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="js/java.js"></script>
+	<script src="js/script.js"></script>
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%; }
+  .picture li a { display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%; height:auto; }
+  .picture li img:hover { display:block; width:100%; height:auto; } 
+</style>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=687d19a8c860d2087fc80b4e78cb9a35"></script>
+
+</head>
+
+<body>
+	
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>동연S&T 소개 앱</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="TITLE.png" >
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">회사소개</a></li>
+				<li><a href="#area" data-rel="dialog">사업영역</a></li>
+				<li><a href="#line" data-rel="dialog">사업분야</a></li>
+				<li><a href="#road">찾아오시는길</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>독도사랑_홍길동</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>회사 소개</h1>
+		</div>
+		<div data-role="content">
+			<div style="text-align:center">
+				<img src="introduce.png">
+			</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>회사 정보</h3>
+					<p align="center"><img src="information.png" alt="회사정보"></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>회사 연혁</h3>
+					<p align="center"><img src="history.jpg" alt=""></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>수상 및 인증</h3>
+					<p align="center"><img src="awards.png" alt=""></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>파트너사</h3>
+					<p align="center"><img src="partner.png" alt=""></p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+		</div>		
+	</div>
+	
+	
+	<div data-role="page" id="area" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>사업 영역</h1>
+		</div>
+		<div data-role="picture">
+			<li><a href="area.jpg" rel="external"></a><img src="area.jpg" alt=""></li><br/>
+			<li><a href="area2.png" rel="external"></a><img src="area2.png" alt=""></li>
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="line">
+		<div data-role="header">
+			<h1>사업분야</h1>
+		</div>
+		<div data-role="content">
+			<img src="line1.png" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#line2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="line2">
+		<div data-role="header">
+		</div>
+		<div data-role="content">
+			<img src="line2.png" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#line"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="road" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>찾아오시는길</h1>
+		</div>
+	
+		<div id="map" style="width:1000px;height:800px;"></div>
+		<script>
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(35.2204307289753, 129.0838344454162),
+				level: 3
+			};
+	
+			var map = new kakao.maps.Map(container, options);
+			var markerPosition = new kakao.maps.LatLng(35.2204307289753, 129.0838344454162);
+	
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				position: markerPosition
+			});
+	
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+	
+			// 페이지가 로드된 후에 map.relayout()을 호출합니다
+			window.onload = function() {
+				setTimeout(function() {
+					map.relayout(); // 지도의 크기 및 레이아웃을 조정
+					map.setCenter(markerPosition); // 지도 중심을 마커 위치로 설정
+				}, 1500); // 100ms 지연 후 호출
+			};
+		</script>
+		<a href="https://kko.kakao.com/FIzMZvdk8z">부산 동래구 온천장로107번길 10</a>
+	
+		<div data-role="footer" data-theme="b"></div>
+	</div>
+	
+</div>	
+</body>
+</html>
+
