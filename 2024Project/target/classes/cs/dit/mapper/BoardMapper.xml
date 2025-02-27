@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cs.dit.mapper.BoardMapper">
+
+  	<select id="getList" resultType="cs.dit.domain.BoardVO">
+            select * from mboard 
+  	</select>
+  	
+  	<select id="getList2" resultType="cs.dit.domain.BoardVO">
+            select * from board 
+  	</select>
+  	
+  	<insert id="insert">
+  		insert into board(title,content,writer)
+  		values(#{title},#{content},#{writer})
+  	</insert>
+  	<delete id="delete">
+  		delete from board where bno	= #{bno}	
+  	</delete>
+  	
+  	<select id="read" resultType="cs.dit.domain.BoardVO">
+  		select * from board where bno = #{bno}
+  	</select>
+  	
+  	<update id="update">
+  		update board set title = #{title},
+  		content = #{content}, writer= #{writer},
+  		updateDate = now()
+  		where bno = #{bno}
+  	</update>
+  	
+  	<insert id="insertmember">
+  		insert into member(userid,passwd,name,email,join_date)
+  		values(#{userid},#{passwd},#{name},#{email},#{join_date])
+  	</insert>
+  	
+  	
+</mapper>
