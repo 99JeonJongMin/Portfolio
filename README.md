@@ -12,7 +12,7 @@
 <br/>
 
 --------------------------------
-시스템 분석 및 설계경험 : http://bit.ly/3Xgpixi <br>
+시스템 분석 및 설계경험 : https://lrl.kr/cgopT <br>
 하이브리드웹앱 경험 : https://lrl.kr/bAqXy
 
 <br>
