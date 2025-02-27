@@ -11,6 +11,9 @@
 <br/>
 <br/>
 
+--------------------------------
+시스템 분석 및 설계경험 : https://99jeonjongmin.github.io/Portfolio/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B6%84%EC%84%9D%EB%B0%8F%EC%84%A4%EA%B3%84_202235457%EC%A0%84%EC%A2%85%EB%AF%BC.pdf
+
 My GitHub Stats
 <br>
 <br>
