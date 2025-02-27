@@ -12,8 +12,8 @@
 <br/>
 
 --------------------------------
-시스템 분석 및 설계경험 : http://bit.ly/3Xgpixi
-하이브리드웹앱 경험 : https://bit.ly/3XihB9X
+시스템 분석 및 설계경험 : http://bit.ly/3Xgpixi <br>
+하이브리드웹앱 경험 : https://lrl.kr/bAqXy
 
 <br>
 
